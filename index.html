@@ -5,6 +5,8 @@
   <title>تاجر - كاتب الإعلانات AI</title>  
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">  
   <link rel="stylesheet" href="/assets/style.css">  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>  
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>  
 </head>  
 <body>  
   <header><h1>تاجر ✨</h1><p>كاتب الإعلانات اللي بيبيع باللهجة السودانية</p></header>  
@@ -17,17 +19,18 @@
     <div id="formCard" class="card hidden">  
       <h2>معلومات المنتج</h2>  
       <form id="adForm">  
-        <label>اسم المنتج</label><input name="product" required>  
-        <label>وصف مختصر</label><textarea name="description" required></textarea>  
-        <label>السعر</label><input name="price" required>  
-        <label>الدولة</label>  
+        <label>اسم المنتج</label><input name="product" placeholder="مثلا: ساعة ذكية" required>  
+        <label>وصف مختصر</label><textarea name="description" placeholder="مميزات المنتج" required></textarea>  
+        <label>السعر</label><input name="price" placeholder="مثلا: 250 ريال" required>  
+        <label>الدولة المستهدفة</label>  
         <select name="country"><option>السعودية</option><option>الإمارات</option><option>مصر</option><option>السودان</option></select>  
         <label>اللهجة</label>  
-        <select name="dialect"><option>سودانية</option><option>سعودية</option><option>مصرية</option></select>  
+        <select name="dialect"><option>سودانية</option><option>سعودية</option><option>مصرية</option><option>إماراتية</option></select>  
         <button type="submit" id="genBtn" class="btn-gold">ولّد لي الإعلان</button>  
       </form>  
     </div>  
     <div id="result" class="card result hidden"></div>  
+    <div id="history" class="card"></div>  
   </main>  
   <script src="/assets/app.js"></script>  
 </body>  
