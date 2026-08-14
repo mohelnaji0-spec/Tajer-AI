@@ -1,0 +1,8 @@
+body{font-family:'Tajawal',sans-serif;background:#0A0A0A;color:#F5F5F5;margin:0;text-align:center}  
+header{padding:40px 20px;background:linear-gradient(135deg,#D4AF37,#FFD700);color:#0A0A0A}  
+.container{max-width:700px;margin:30px auto;padding:0 20px}  
+.card{background:#1A1A1A;padding:25px;border-radius:15px;margin-bottom:20px;border:1px solid #333}  
+.hidden{display:none}.result{white-space:pre-wrap;text-align:right}  
+input,textarea,select{width:100%;padding:12px;margin:8px 0;background:#2A2A2A;border:1px solid #444;border-radius:8px;color:#fff}  
+.btn-gold{background:#D4AF37;color:#000;border:none;padding:14px 25px;border-radius:10px;font-weight:700;cursor:pointer;width:100%;font-size:16px}  
+.btn-gold:disabled{opacity:0.5}  
