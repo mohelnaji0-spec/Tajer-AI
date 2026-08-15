@@ -1,0 +1,6 @@
+{
+  "name": "tajer-ai",
+  "dependencies": {
+    "@vercel/kv": "^1.0.0"
+  }
+}
