@@ -1,0 +1,10 @@
+name = "tajer-ai"
+main = "worker.js"
+compatibility_date = "2026-08-14"
+
+[assets]
+directory = "./public"
+
+[vars]
+# لا تضع مفاتيح Groq هنا
+# المفاتيح توضع من Cloudflare Secrets
