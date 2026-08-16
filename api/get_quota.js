@@ -1,4 +1,6 @@
-import { kv } from '@vercel/kv';
+import { Redis } from "@upstash/redis";
+
+const redis = Redis.fromEnv();
 
 
 export default async function handler(req,res){
@@ -29,7 +31,7 @@ const key=
 
 
 const used=
-Number(await kv.get(key)||0);
+Number(await redis.get(key)||0);
 
 
 
