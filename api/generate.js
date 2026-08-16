@@ -1,4 +1,6 @@
-import { kv } from '@vercel/kv';
+imporimport { Redis } from "@upstash/redis";
+
+const redis = Redis.fromEnv();
 
 
 export default async function handler(req,res){
@@ -49,7 +51,7 @@ const quotaKey=
 
 
 let used=Number(
-await kv.get(quotaKey) || 0
+await redis.get(quotaKey) || 0
 );
 
 
@@ -79,9 +81,9 @@ const ad=await generateAd(body);
 
 
 
-await kv.set(
+await redis.set(
 quotaKey,
-used+1,
+used + 1,
 {
 ex:86400
 }
