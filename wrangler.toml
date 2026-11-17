@@ -1,0 +1,12 @@
+name = "tajer-ai"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "TAJER_KV"
+id = "PUT_YOUR_KV_ID"
+
+[vars]
+META_MODEL_BASE_URL = "https://api.meta.ai/v1"
+MONETAG_ZONE_ID = "PUT_YOUR_ZONE"
+GOOGLE_CLIENT_ID = "PUT_GOOGLE_CLIENT_ID"
