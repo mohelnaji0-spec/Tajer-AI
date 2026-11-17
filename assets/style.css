@@ -1,8 +1,0 @@
-body{font-family:'Tajawal',sans-serif;background:#0a0a0a;color:#fff;margin:0;padding:20px}  
-header{text-align:center;margin-bottom:30px}  
-.container{max-width:700px;margin:auto}  
-.card{background:#1a1a1a;padding:20px;border-radius:12px;margin-bottom:15px;border:1px solid #333}  
-.btn-gold{background:#FFD700;color:#000;border:none;padding:12px 20px;border-radius:8px;font-weight:700;cursor:pointer;margin:5px}  
-input,textarea,select{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #444;background:#222;color:#fff}  
-.hidden{display:none}  
-pre{white-space:pre-wrap;background:#222;padding:10px;border-radius:8px}  
