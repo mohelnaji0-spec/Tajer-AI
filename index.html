@@ -1,37 +1,124 @@
-<!DOCTYPE html>  
-<html lang="ar" dir="rtl">  
-<head>  
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>تاجر - كاتب الإعلانات AI</title>  
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">  
-<link rel="stylesheet" href="/assets/style.css">  
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>  
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>  
-</head>  
-<body>  
-<header><h1>تاجر ✨</h1><p>كاتب الإعلانات اللي بيبيع باللهجة السودانية</p></header>  
-<main class="container">  
-<div class="card center">  
-<h2>جاهز تنشئ إعلان يبيع؟</h2>  
-<p id="quota">جاري تحميل...</p>  
-<button id="showFormBtn" class="btn-gold">إنشاء إعلان جديد</button>  
-</div>  
-<div id="formCard" class="card hidden">  
-<h2>معلومات المنتج</h2>  
-<form id="adForm">  
-<label>اسم المنتج</label><input name="product" placeholder="مثلا: ساعة ذكية" required>  
-<label>وصف مختصر</label><textarea name="description" placeholder="مميزات المنتج" required></textarea>  
-<label>السعر</label><input name="price" placeholder="مثلا: 250 ريال" required>  
-<label>الدولة المستهدفة</label>  
-<select name="country"><option>السعودية</option><option>الإمارات</option><option>مصر</option><option>السودان</option></select>  
-<label>اللهجة</label>  
-<select name="dialect"><option>سودانية</option><option>سعودية</option><option>مصرية</option><option>إماراتية</option></select>  
-<button type="submit" id="genBtn" class="btn-gold">ولّد لي الإعلان</button>  
-</form>  
-</div>  
-<div id="result" class="card result hidden"></div>  
-<div id="history" class="card"></div>  
-</main>  
-<script src="/assets/app.js"></script>  
-</body>  
-</html>  
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تاجر AI - أنشئ إعلانك خلال ثوانٍ فقط</title>
+<link rel="stylesheet" href="/assets/style.css">
+<script src="https://alwingulla.com/88/tag.min.js" data-zone="PUT_YOUR_ZONE" async data-cfasync="false"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+<div class="container">
+  <h1>🛍️ تاجر AI</h1>
+  <p class="sub">أنشئ إعلانك النصي + وصف الصورة - خلال ثوانٍ فقط</p>
+  <p class="sub">مجاناً - 10 إعلانات يومياً - لجميع الدول العربية</p>
+
+  <div id="tryArea">
+    <button id="tryBtn" onclick="startTrial()">جرّب الآن - مجاناً ✨</button>
+    <p class="hint">تجربة واحدة مجانية بدون تسجيل</p>
+  </div>
+
+  <div id="trialDoneBox" style="display:none">
+    <p class="warn">⚠️ لقد استخدمت تجربتك المجانية</p>
+    <p class="hint">سجّل الآن للمتابعة مجاناً - وإنشاء 10 إعلانات يومياً</p>
+  </div>
+
+  <div id="loginBox">
+    <div style="text-align:center;margin:10px 0;color:#aaa">─── أو ───</div>
+    <div id="g_id_onload" data-client_id="PUT_GOOGLE_CLIENT_ID" data-callback="onGoogleLogin"></div>
+    <div class="g_id_signin" data-type="standard"></div>
+    <p class="hint">سجّل الدخول عبر Google للبدء - مجاناً</p>
+  </div>
+
+  <div id="loginRequiredBox" style="display:none">
+    <h2>🎉 أعجبك الإعلان؟</h2>
+    <p>سجّل الآن لحفظ إعلاناتك<br>وإنشاء إعلانات أخرى مجاناً</p>
+    <p class="hint">المتبقي لك بعد التسجيل: 10 إعلانات يومياً - مجاناً</p>
+    <div class="g_id_signin" data-type="standard"></div>
+    <p class="hint">التسجيل مجاني - عبر Google - خلال ثوانٍ فقط</p>
+  </div>
+
+  <div class="feat">
+    <p>📝 إعلان نصي جاهز للنشر - فيسبوك / واتساب / تيك توك</p>
+    <p>🖼️ وصف للصورة - انسخه إلى أي أداة ذكاء اصطناعي خارجية</p>
+    <p>📋 زر نسخ - لكل نتيجة - بنقرة واحدة</p>
+    <p>🌍 22 دولة - 22 لهجة - العربية / الإنجليزية</p>
+    <p>🛍️ للمنتجات والخدمات</p>
+  </div>
+
+  <div class="example">👇 مثال - كيف يبدو الإعلان؟
+🔥 عرض اليوم فقط - من متجر النور 🔥
+كريم تفتيح أصلي - 15,000 جنيه فقط
+التوصيل متوفر لجميع الولايات 🚚
+اطلب الآن عبر الرسائل الخاصة 📩</div>
+
+  <div id="appBox" style="display:none">
+    <p id="userInfo"></p>
+    <p id="quota">المتبقي لك اليوم: 10 إعلانات نصية</p>
+
+    <form id="adForm">
+      <label>اسم المنتج / الخدمة 🛍️ *</label>
+      <input id="product" placeholder="مثال: كريم تفتيح - أو: تصميم سيرة ذاتية - أو: خدمة توصيل" required>
+      <label>الدولة 🌍 - اختياري</label>
+      <select id="country">
+        <option value="">-- اختياري - اتركه فارغاً إذا كانت خدمتك عبر الإنترنت --</option>
+        <option>السودان</option><option>مصر</option><option>السعودية</option><option>الإمارات</option><option>الكويت</option><option>قطر</option><option>البحرين</option><option>عمان</option><option>اليمن</option><option>العراق</option><option>سوريا</option><option>لبنان</option><option>الأردن</option><option>فلسطين</option><option>المغرب</option><option>الجزائر</option><option>تونس</option><option>ليبيا</option><option>موريتانيا</option><option>جيبوتي</option><option>الصومال</option><option>جزر القمر</option>
+      </select>
+      <label>اللهجة 🗣️ *</label>
+      <select id="dialect">
+        <option value="سودانية">سودانية</option><option value="مصرية">مصرية</option><option value="سعودية نجدية">سعودية - نجدية</option><option value="سعودية حجازية">سعودية - حجازية</option><option value="إماراتية">إماراتية</option><option value="كويتية">كويتية</option><option value="قطرية">قطرية</option><option value="بحرينية">بحرينية</option><option value="عمانية">عمانية</option><option value="يمنية">يمنية</option><option value="عراقية">عراقية</option><option value="سورية شامية">سورية - شامية</option><option value="لبنانية">لبنانية</option><option value="أردنية">أردنية</option><option value="فلسطينية">فلسطينية</option><option value="مغربية دارجة">مغربية - دارجة</option><option value="جزائرية">جزائرية</option><option value="تونسية">تونسية</option><option value="ليبية">ليبية</option><option value="موريتانية">موريتانية</option><option value="صومالية">صومالية</option><option value="فصحى">فصحى - رسمية</option>
+      </select>
+      <label>المدينة / المكان 📍 - اختياري</label>
+      <input id="city" placeholder="مثال: أمدرمان - أو اتركه فارغاً إذا كانت خدمتك عبر الإنترنت">
+      <label>نوع المنتج / الخدمة 🏷️ - اختياري</label>
+      <select id="category">
+        <option value="">-- اختياري --</option>
+        <option>منتج - ملابس</option><option>منتج - كريمات وعناية</option><option>منتج - موبايلات</option><option>منتج - أكل</option><option>منتج - عقارات</option><option>منتج - سيارات</option><option>خدمة - تصميم</option><option>خدمة - توصيل</option><option>خدمة - تعليم / دورات</option><option>خدمة - صيانة</option><option>خدمة - أخرى</option>
+      </select>
+      <label>السعر 💰 - اختياري</label>
+      <input id="price" placeholder="مثال: 15,000 جنيه - أو: السعر في الخاص - أو اتركه فارغاً">
+      <label>التوصيل 🚚 - اختياري - للمنتجات فقط</label>
+      <input id="delivery" placeholder="مثال: التوصيل متوفر لجميع الولايات - أو اتركه فارغاً إذا كانت خدمة">
+      <label>رقم واتساب 📱 - اختياري</label>
+      <input id="whatsapp" placeholder="إذا تركته فارغاً، سيُكتب في الإعلان: اطلب عبر الرسائل الخاصة - مثال: 0912345678">
+      <label>لغة الإعلان 🌐 *</label>
+      <select id="lang"><option value="عربي">العربية فقط</option><option value="إنجليزي">الإنجليزية فقط</option><option value="عربي + إنجليزي">العربية + الإنجليزية</option></select>
+      <label>طول الإعلان 📏 *</label>
+      <select id="length"><option value="قصير - فيسبوك">قصير - لفيسبوك</option><option value="متوسط - واتساب">متوسط - لواتساب</option><option value="طويل - تفصيلي">طويل - تفصيلي</option></select>
+      <label>أين ستنشر الإعلان؟ 📢 *</label>
+      <select id="platform"><option>فيسبوك</option><option>واتساب</option><option>انستقرام</option><option>تيك توك</option><option>تلجرام</option><option>ماسنجر</option><option>السوق - Marketplace</option><option>قوقل</option><option>جميع المنصات</option></select>
+      <label>اسم المتجر / الخدمة 🏪 - اختياري</label>
+      <input id="shopName" placeholder="مثال: متجر النور - أو اتركه فارغاً">
+      <label>هل لديك عرض؟ 🎁 - اختياري</label>
+      <select id="offer"><option value="">لا يوجد عرض</option><option>خصم 10%</option><option>خصم 20%</option><option>خصم 50%</option><option>اشترِ 1 واحصل على 1 مجاناً</option><option>توصيل مجاني</option><option>عرض اليوم فقط</option></select>
+      <label>الجمهور المستهدف 👥 - اختياري</label>
+      <select id="audience"><option>الجميع</option><option>نساء</option><option>رجال</option><option>شباب</option><option>فتيات</option><option>أمهات</option><option>طلاب</option></select>
+      <label>نبرة الإعلان 🎭 *</label>
+      <select id="tone"><option>حماسية</option><option>مرحة</option><option>جادة ورسمية</option><option>عاطفية</option></select>
+      <label>رابط صفحتك 🔗 - اختياري</label>
+      <input id="pageLink" placeholder="مثال: facebook.com/noor - يمكنك تركه فارغاً">
+      <label>هل لديك صورة؟ 🖼️ *</label>
+      <select id="hasImage"><option value="لا - عاوز برومبت صورة كامل">لا - أريد وصفاً كاملاً للصورة</option><option value="أيوه عندي صورة جاهزة">نعم - لدي صورة جاهزة</option></select>
+      <label>رابط الخدمة 🔗 - اختياري - للخدمات فقط</label>
+      <input id="serviceLink" placeholder="مثال: رابط موقعك - رابط الحجز - رابط واتساب للأعمال - أو اتركه فارغاً إذا كان منتجاً">
+      <button type="submit" id="createBtn">إنشاء إعلان جديد ✨ - خلال ثوانٍ فقط</button>
+    </form>
+
+    <div id="result" style="display:none">
+      <h3>📝 الإعلان النصي</h3>
+      <textarea id="adText" readonly rows="8"></textarea>
+      <button onclick="copyText('adText')">📋 نسخ الإعلان</button>
+      <h3>🖼️ وصف الصورة - انسخه إلى أي ذكاء اصطناعي</h3>
+      <textarea id="imagePrompt" readonly rows="4"></textarea>
+      <button onclick="copyText('imagePrompt')">📋 نسخ وصف الصورة</button>
+      <p class="hint">انسخ الوصف - والصقه في ChatGPT / Gemini / Midjourney / أي ذكاء اصطناعي - وسيُنشئ لك الصورة</p>
+    </div>
+
+    <h3>📜 إعلاناتك السابقة</h3>
+    <div id="history"></div>
+  </div>
+</div>
+<script src="/assets/app.js"></script>
+</body>
+  </html>
