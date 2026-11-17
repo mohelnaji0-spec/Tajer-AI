@@ -1,0 +1,17 @@
+*{box-sizing:border-box}
+body{font-family:system-ui; background:#0a0a0a; color:#fff; margin:0; padding:16px}
+.container{max-width:640px; margin:auto}
+h1{text-align:center; color:#f5c518}
+.sub{text-align:center; color:#aaa}
+label{display:block; margin:14px 0 4px; font-weight:700}
+input,select,textarea{width:100%; padding:12px; margin:8px 0; border-radius:10px; border:1px solid #333; background:#1a1a1a; color:#fff; font-size:16px}
+button{width:100%; padding:12px; background:#f5c518; color:#000; border:none; border-radius:10px; font-weight:bold; font-size:16px; cursor:pointer; margin:6px 0}
+button:disabled{opacity:.5}
+.card{background:#1a1a1a; padding:12px; border-radius:10px; margin:8px 0}
+.hint{color:#aaa; font-size:13px; text-align:center}
+.warn{color:#fca5a5; font-weight:700; text-align:center}
+.feat{margin-top:14px; line-height:2; color:#ddd}
+.example{background:#1a1a1a; border:1px dashed #f5c518; padding:14px; border-radius:12px; margin-top:14px; line-height:1.8; white-space:pre-line}
+#quota{background:#1a1a1a; padding:10px; border-radius:10px; text-align:center}
+#loginRequiredBox{background:#1a1a1a; padding:16px; border-radius:12px; text-align:center; margin:14px 0; border:1px solid #f5c518}
+#trialDoneBox{background:#1a1a1a; padding:12px; border-radius:12px; margin:10px 0}
