@@ -1,8 +1,26 @@
-// Worker - تاجر AI - نصوص + برومبت صورة - بدون Kaggle - بدون توليد صور
-// النموذج: Muse Spark Contributor - من Meta Model API
+// Worker - تاجر AI - 5 مفاتيح Meta - دوران Round-Robin - Muse Spark Contributor
+// الطلب 1 = KEY1 - الطلب 2 = KEY2 - الطلب 3 = KEY3 - الطلب 4 = KEY4 - الطلب 5 = KEY5 - الطلب 6 = KEY1 تاني - وهكذا
 async function callMeta(env, prompt){
-  const keys = [env.META_MODEL_KEY1, env.META_MODEL_KEY2].filter(Boolean);
-  for(const key of keys){
+  const keys = [env.META_MODEL_KEY1, env.META_MODEL_KEY2, env.META_MODEL_KEY3, env.META_MODEL_KEY4, env.META_MODEL_KEY5].filter(Boolean);
+  if(keys.length === 0) throw new Error('لا يوجد مفتاح Meta');
+
+  // جيب العداد من KV - عشان الدوران يستمر حتى لو الـ Worker اتعمل ليه Restart
+  let counter = 0;
+  try{
+    counter = parseInt(await env.TAJER_KV.get('meta_key_counter') || '0');
+  }catch(e){ counter = 0; }
+
+  const startIndex = counter % keys.length;
+
+  // زيد العداد للطلب الجاي - الطلب الجاي حياخد المفتاح البعدو
+  try{
+    await env.TAJER_KV.put('meta_key_counter', String(counter + 1));
+  }catch(e){}
+
+  // جرب من المفتاح الحالي - ولو فشل - جرب البعدو طوالي
+  for(let i = 0; i < keys.length; i++){
+    const keyIndex = (startIndex + i) % keys.length;
+    const key = keys[keyIndex];
     try{
       const res = await fetch(`${env.META_MODEL_BASE_URL}/chat/completions`, {
         method: 'POST',
@@ -20,7 +38,7 @@ async function callMeta(env, prompt){
       if(text) return text;
     }catch(e){ continue; }
   }
-  throw new Error('Meta API فشل في المفتاحين');
+  throw new Error('Meta API فشل في كل المفاتيح الخمسة');
 }
 
 function verifyToken(env, req){
