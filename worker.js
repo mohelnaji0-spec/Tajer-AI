@@ -1,4 +1,5 @@
 // Worker - تاجر AI - نصوص + برومبت صورة - بدون Kaggle - بدون توليد صور
+// النموذج: Muse Spark Contributor - من Meta Model API
 async function callMeta(env, prompt){
   const keys = [env.META_MODEL_KEY1, env.META_MODEL_KEY2].filter(Boolean);
   for(const key of keys){
@@ -7,7 +8,7 @@ async function callMeta(env, prompt){
         method: 'POST',
         headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'Llama-4-Maverick-17B-128E-Instruct',
+          model: 'Muse-Spark-Contributor',
           messages: [{ role: 'user', content: prompt }],
           temperature: 0.7,
           max_tokens: 800
